@@ -18,13 +18,16 @@ const ManualDefinitionPage = () => {
     setIsLoading(true);
     setError("");
     try {
-      const response = await fetch("http://localhost:3000/api/create-process", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://ai-process-builder.onrender.com/api/create-process",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -89,13 +92,16 @@ const ManualDefinitionPage = () => {
     setIsLoading(true);
     setError("");
     try {
-      const response = await fetch("http://localhost:3000/api/save-all-steps", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ steps }),
-      });
+      const response = await fetch(
+        "https://ai-process-builder.onrender.com/api/save-all-steps",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ steps }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");

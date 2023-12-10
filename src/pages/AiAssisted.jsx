@@ -5,13 +5,15 @@ import ChatHistory from "../components/AiAssisted/ChatHistory";
 export default function AiAssisted() {
   const [chatHistory, setChatHistory] = useState([]);
   const [editingStep, setEditingStep] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSendMessage = async (message) => {
     setChatHistory([...chatHistory, { type: "user", text: `You: ${message}` }]);
+    setIsLoading(true);
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/process-description",
+        "https://ai-process-builder.onrender.com/api/process-description",
         {
           method: "POST",
           headers: {
@@ -33,6 +35,8 @@ export default function AiAssisted() {
       }
     } catch (error) {
       console.error("Error:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -50,7 +54,7 @@ export default function AiAssisted() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/update-step/${processId}/${order}`,
+        `https://ai-process-builder.onrender.com/api/update-step/${processId}/${order}`,
         {
           method: "PUT",
           headers: {
@@ -94,14 +98,18 @@ export default function AiAssisted() {
   };
   return (
     <div className="min-h-screen bg-black text-white bg-opacity-20 border border-gray-200 rounded-lg shadow-lg p-4 glassmorphism">
-      <div className="p-4">
-        <ChatHistory
-          chatHistory={chatHistory}
-          onEdit={handleEdit}
-          onEditSave={handleEditSave}
-          editingStep={editingStep}
-        />
-      </div>
+      {isLoading ? (
+        <div className="text-black font-bold">Loading...</div>
+      ) : (
+        <div className="p-4">
+          <ChatHistory
+            chatHistory={chatHistory}
+            onEdit={handleEdit}
+            onEditSave={handleEditSave}
+            editingStep={editingStep}
+          />
+        </div>
+      )}
       <div className="fixed inset-x-0 bottom-0 p-4">
         <ChatInput onSendMessage={handleSendMessage} />
       </div>

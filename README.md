@@ -30,13 +30,13 @@ Follow these steps to run the project locally:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/anujaagarwal/groww-stocks.git
+   git clone https://github.com/anujaagarwal/AI-Powered-Process-Builder.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd AI-Powered-Process-Builder-App
+   cd AI-Powered-Process-Builder
    ```
 
 3. Install project dependencies:
@@ -46,7 +46,7 @@ Follow these steps to run the project locally:
 
    ```
 
-4. Set you environment variable before starting the application. You can obtain a free API key from [Financial Modeling Prep](https://site.financialmodelingprep.com/) by signing up on their website. Once you have your API key, store it in your project's environment variables. You can store environment variables under .env.local file of the project.
+4. Set you environment variable before starting the application. You can store environment variables under .env.local file of the project.
 
 Environment Variables used are:-
 
@@ -62,23 +62,21 @@ Environment Variables used are:-
 
    ```
 
-6. Open your web browser and access the application at `http://localhost:3000` you will see Top Gainers and losers. You can click on any card button to get access to each stock page which routes to `stock/${id}`
+6. Open your web browser and access the application at `http://localhost:5173` you will see the Home Page. You will see two buttons one is to use PBGPT which is AiAssisted page and another is manual definition page.
 
-**Note:** To access the API endpoints, you'll need an API key from [Financial Modeling Prep](https://site.financialmodelingprep.com/). If the site's data cards are not available, you can generate a new API key from the site after signing up. This API key should be stored securely in your project's environment variables in .env.local file. The decision to use this site is based on having a higher rate limit, making it suitable for development and testing purposes.
+<!-- **Note:** To access the API endpoints, you'll need an API key from [Financial Modeling Prep](https://site.financialmodelingprep.com/). If the site's data cards are not available, you can generate a new API key from the site after signing up. This API key should be stored securely in your project's environment variables in .env.local file. The decision to use this site is based on having a higher rate limit, making it suitable for development and testing purposes. -->
 
 ## Program Design
 
-The program is designed as a single-page application (SPA) using Next.js. It consists of multiple components that are structured into a well-defined folder structure. Key components include:
+The program is designed as a single-page application (SPA) using React.js. It consists of multiple components that are structured into a well-defined folder structure. Key components include:
 
-- **ExplorePage:** Displays the top gainers and losers, featuring grids of cards representing stocks and ETFs. Clicking on a card routes the user to the Product Page for that item.
+- **HomePage:** It's a landing page of the website.
 
-- **Stock Page:** Provides detailed information about a selected stock or ETF, including basic data and a candle stick graph of price changes.
+- **Ai Assisted Page:** Here you can talk to PBGPT to get and edit steps of the description you type in
 
-- **NavBar:** A common Navbar that appears on both pages, displaying the application name and a search bar.
+- **Manual Definition Page:** Here user can manually create a process and steps to it.
 
-- **SearchBar:** Part of the Navbar, it shows suggested stocks as the user types.
-
-- **FolderStructure:** Explaining folder structure in 2 to 3 lines. Certainly! In a Next.js project, the folder structure is designed to promote an organized and efficient development process. At the root level, you'll typically find essential configuration files such as package.json, next.config.js, tailwindconfig. The src directory contains pages Directory. The "pages" directory is a fundamental aspect of Next.js, as it automatically generates routes based on the files within it. It's where you create your various web pages, and the file structure here mirrors the URL structure of my site. Additionally, the "public" directory is used to store static assets like images and fonts. You must have seen "components" directory for reusable React components, and a "styles" directory for CSS or styling files. This structure not only encourages a component-based architecture but also aligns well with server-rendered and static site generation.
+- **FolderStructure:** Explaining folder structure in 2 to 3 lines. Certainly! In a React.js project, the folder structure is designed to promote an organized and efficient development process. At the root level, you'll typically find essential configuration files such as package.json, tailwindconfig. The src directory contains pages and components Directory. Additionally, the "public" directory is used to store static assets like images and fonts. You must have seen "components" directory for reusable React components. This structure not only encourages a component-based architecture but also aligns well .
   Here is the folder structure:-
 
 ```bash
@@ -86,7 +84,6 @@ The program is designed as a single-page application (SPA) using Next.js. It con
 ├── package-lock.json
 ├── postcss.config.js
 ├── public
-│   └── vite.svg
 ├── README.md
 ├── src
 │   ├── App.css
@@ -132,27 +129,19 @@ The program is designed as a single-page application (SPA) using Next.js. It con
 ## UI related decisions:-
 
 1. I used Tailwind CSS for efficient and consistent UI development, reducing custom CSS and promoting faster project delivery. Also it is really easy to adapt if someone knows CSS.
-2. I used HighChart as 3rd party library for creating candlestick charts.
 
 ## Technologies
 
-- **[Nextjs](https://nextjs.org/):** The framework used for building the Single Page Application.
 - **[React](https://react.dev/):** The JavaScript library for building user interfaces.
-- **[Financial Modeling Prep API](https://site.financialmodelingprep.com/):** Provides stock and ETF data.
 - **[Tailwind CSS](https://tailwindcss.com/):** A utility-first CSS framework that simplifies styling.
-- **[HighChart](https://www.highcharts.com/):** A library for creating interactive charts.
-- **[Axios:](https://axios-http.com/docs/intro)** For making HTTP requests to the Financial Modeling Prep API.
 
 ## Known Issues
 
-- While working on this project, I want to acknowledge that I didn't strictly adhere to the best practices of separating pf concerns within React components. The primary reason for this was time constraints and the need to deliver a functional project within the specified timeline.
+- While working on this project, I want to acknowledge that I didn't strictly adhere to the best practices of separating of concerns within React components. The primary reason for this was time constraints and the need to deliver a functional project within the specified timeline.
 
 I understand the importance of maintaining a clear separation of concerns in a well-structured application, where UI components are decoupled from data-fetching and processing. This separation ensures better maintainability, scalability, and reusability of code.
 
-- In the chart 6m, 1m button isn't working.
-- 52 week high and low chart can be improved.
-
-The above issues are known issues which I haven't fixed but if given time I will definitely fix these.
+I could have used Proptypes in my components but I didn't use for the time constraint given.
 
 ## Deployment
 
