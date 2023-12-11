@@ -159,6 +159,7 @@ I understand the importance of maintaining a clear separation of concerns in a w
 
 - We can add upload file options in the AI assistant. From which it will read detailed description and get steps.
 - We can also add images and videos for each step being displayed rather than only working with texts.
+- There should be an option of mic so that anyone can speak and it converts to process definition in AI assistant page.
 
 ## Deployment
 
