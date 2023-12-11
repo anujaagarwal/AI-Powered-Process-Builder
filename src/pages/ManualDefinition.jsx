@@ -144,7 +144,7 @@ const ManualDefinitionPage = () => {
             <Button
               onClick={handleSaveAll}
               text="Save All Steps"
-              className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mt-4"
+              className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mt-4 ml-4"
             />
           ) : (
             <div className="mt-4">

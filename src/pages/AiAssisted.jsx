@@ -7,6 +7,7 @@ export default function AiAssisted() {
   const [editingStep, setEditingStep] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
+
   const handleSendMessage = async (message) => {
     setChatHistory([...chatHistory, { type: "user", text: `You: ${message}` }]);
     setIsLoading(true);
@@ -94,19 +95,19 @@ export default function AiAssisted() {
     setEditingStep(order);
   };
   return (
-    <div className="min-h-screen bg-black text-white bg-opacity-20 border border-gray-200 rounded-lg shadow-lg p-4 glassmorphism">
-      {isLoading ? (
-        <div className="text-black font-bold">Loading...</div>
-      ) : (
-        <div className="p-4">
-          <ChatHistory
-            chatHistory={chatHistory}
-            onEdit={handleEdit}
-            onEditSave={handleEditSave}
-            editingStep={editingStep}
-          />
-        </div>
-      )}
+    <div className="min-h-screen bg-black text-white bg-opacity-20 border border-gray-200 rounded-lg shadow-lg p-4 glassmorphism ">
+      <div className="p-4 overflow-y-auto max-h-[600px]">
+        <ChatHistory
+          chatHistory={chatHistory}
+          onEdit={handleEdit}
+          onEditSave={handleEditSave}
+          editingStep={editingStep}
+        />
+        {isLoading && (
+          <div className="text-black font-bold mt-2">Loading...</div>
+        )}
+      </div>
+
       <div className="fixed inset-x-0 bottom-0 p-4">
         <ChatInput onSendMessage={handleSendMessage} />
       </div>
