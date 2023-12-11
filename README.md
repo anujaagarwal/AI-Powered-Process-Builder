@@ -1,6 +1,6 @@
 # Introducing AI Powered Process Builder App (PBGPT)
 
-AI-Powered Process Builder is a web application that allows users to create, manage, and store process definitions and generate steps both using AI assistant and manually. The application integrates with an AI model (like ChatGPT) for natural language interpretation and provides a user-friendly interface for process management.
+AI-Powered Process Builder is a web application that allows users to create, manage, and store process definitions and generate steps both using AI assistant and manually. Just give a small description of the process and it will give you steps. The application integrates with an AI model (like ChatGPT) for natural language interpretation and provides a user-friendly interface for process management.
 
 ## Table of Contents
 
