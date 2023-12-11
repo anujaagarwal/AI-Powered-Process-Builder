@@ -19,7 +19,7 @@ const Header = () => {
             className="text-white hover:text-gray-300"
             activeClassName="border-b-2 border-gray-300"
           >
-            Manual Process Definition
+            Manual Process Creation
           </NavLink>
           {/* <NavLink
             to="/database-integration"

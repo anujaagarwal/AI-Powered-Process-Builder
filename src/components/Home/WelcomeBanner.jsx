@@ -8,8 +8,8 @@ const WelcomeBanner = () => {
       </h2>
       <p className="text-xl">
         Create, manage, and store your process definitions and steps to it.
-        Choose between AI-assisted input and manual process definition for a
-        seamless experience.
+        Choose between AI-assisted input and manual input for a seamless
+        experience.
       </p>
     </div>
   );

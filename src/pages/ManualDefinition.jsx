@@ -113,7 +113,7 @@ const ManualDefinitionPage = () => {
   return (
     <div className="container mx-auto p-4 bg-black">
       <h1 className="text-2xl font-bold text-gray-700 mb-4">
-        Manual Process Definition
+        Manual Process Creation
       </h1>
 
       {error && <div className="text-red-500 text-center">{error}</div>}
