@@ -7,9 +7,9 @@ const WelcomeBanner = () => {
         Welcome to AI Process Builder!
       </h2>
       <p className="text-xl">
-        Create, manage, and store your process definitions with ease. Choose
-        between AI-assisted input and manual process definition for a seamless
-        experience.
+        Create, manage, and store your process definitions and steps to it.
+        Choose between AI-assisted input and manual process definition for a
+        seamless experience.
       </p>
     </div>
   );
