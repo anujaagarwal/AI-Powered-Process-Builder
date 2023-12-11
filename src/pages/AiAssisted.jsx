@@ -7,7 +7,6 @@ export default function AiAssisted() {
   const [editingStep, setEditingStep] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
-  console.log(BASE_URL);
   const handleSendMessage = async (message) => {
     setChatHistory([...chatHistory, { type: "user", text: `You: ${message}` }]);
     setIsLoading(true);
