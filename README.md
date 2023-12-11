@@ -1,6 +1,6 @@
 # Introducing AI Powered Process Builder App (PBGPT)
 
-AI-Powered Process Builder is a web application that allows users to create, manage, and store process definitions and generate steps both using AI assistant and manually. Just give a small description of the process and it will give you steps. The application integrates with an AI model (like ChatGPT) for natural language interpretation and provides a user-friendly interface for process management.
+AI-Powered Process Builder is a web application that allows users to create, manage, and store process definitions and generate steps both using AI assistant and manually. Just give a small and concise definition of the process and it will give you steps. The application integrates with an AI model (like ChatGPT) for natural language interpretation and provides a user-friendly interface for process management.
 
 ## Table of Contents
 
@@ -119,7 +119,7 @@ The program is designed as a single-page application (SPA) using React.js. It co
 
 ## Key Decision Making and Reasoning behind that:-
 
-1. I opted to use FetchApi for data fetching due to its user-friendly and straightforward syntax. Fetch is built into modern browsers, which means I don't need to add an additional library or package like Axios. This can reduced the size of your application and simplified my project's dependencies.
+1. I opted to use FetchApi for data fetching due to its user-friendly and straightforward syntax. Fetch is built into modern browsers, which means I don't need to add an additional library or package like Axios. This can reduced the size of my application and simplified my project's dependencies.
 2. Kept most of the business logic in pages and kept the code modular by creating reusable components.
 
 ## API Integration
