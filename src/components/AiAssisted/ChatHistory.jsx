@@ -1,6 +1,7 @@
 import React from "react";
 import EditStepForm from "../ManualDefinition/EditStepForm";
 import Button from "../common/Button";
+
 export default function ChatHistory({
   chatHistory,
   onEdit,

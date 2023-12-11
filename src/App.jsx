@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./components/Home/Header";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../src/pages/Home";
 import AiAssisted from "../src/pages/AiAssisted";
@@ -23,9 +23,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router}>
-        <Header />
-      </RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }
