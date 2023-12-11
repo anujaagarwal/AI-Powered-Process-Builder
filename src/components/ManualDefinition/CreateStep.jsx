@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "../common/Button";
-
+import InputField from "../common/InputField";
 export default function CreateStep({ onSubmit }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
