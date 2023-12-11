@@ -5,7 +5,6 @@ import CreateStep from "../components/ManualDefinition/CreateStep";
 import StepListComponent from "../components/ManualDefinition/StepList";
 import ProcessDisplayComponent from "../components/ManualDefinition/ProcessDisplay";
 import Button from "../components/common/Button";
-
 const ManualDefinitionPage = () => {
   const [steps, setSteps] = useState([]);
   const [showProcessComponent, setShowProcessComponent] = useState(true);
@@ -13,21 +12,18 @@ const ManualDefinitionPage = () => {
   const [error, setError] = useState("");
   const [showButton, setShowButton] = useState(true);
   const [processData, setProcessData] = useState(null);
-
+  const BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
   const handleCreateProcess = async (data) => {
     setIsLoading(true);
     setError("");
     try {
-      const response = await fetch(
-        "https://ai-process-builder.onrender.com/api/create-process",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`${BASE_URL}/create-process`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -92,16 +88,13 @@ const ManualDefinitionPage = () => {
     setIsLoading(true);
     setError("");
     try {
-      const response = await fetch(
-        "https://ai-process-builder.onrender.com/api/save-all-steps",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ steps }),
-        }
-      );
+      const response = await fetch(`${BASE_URL}/save-all-steps`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ steps }),
+      });
 
       if (!response.ok) {
         throw new Error("Network response was not ok");

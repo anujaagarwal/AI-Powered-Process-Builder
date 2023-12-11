@@ -6,22 +6,20 @@ export default function AiAssisted() {
   const [chatHistory, setChatHistory] = useState([]);
   const [editingStep, setEditingStep] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  const BASE_URL = import.meta.env.VITE_REACT_APP_API_BASE_URL;
+  console.log(BASE_URL);
   const handleSendMessage = async (message) => {
     setChatHistory([...chatHistory, { type: "user", text: `You: ${message}` }]);
     setIsLoading(true);
 
     try {
-      const response = await fetch(
-        "https://ai-process-builder.onrender.com/api/process-description",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ description: message }),
-        }
-      );
+      const response = await fetch(`${BASE_URL}/process-description`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ description: message }),
+      });
 
       if (response.ok) {
         const data = await response.json();
@@ -54,7 +52,7 @@ export default function AiAssisted() {
 
     try {
       const response = await fetch(
-        `https://ai-process-builder.onrender.com/api/update-step/${processId}/${order}`,
+        `${BASE_URL}/update-step/${processId}/${order}`,
         {
           method: "PUT",
           headers: {
