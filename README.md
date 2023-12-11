@@ -9,9 +9,10 @@ AI-Powered Process Builder is a web application that allows users to create, man
 - [Program Design](#program-design)
 - [Key Decision Making and Reasoning behind that](#decisions)
 - [API Integration](#api-integration)
-- [UI related decisions](#ui)
-- [Technologies](#technologies)
+- [UI related decisions](#ui-related-decisions)
+- [Technologies Used](#technologies-used)
 - [Known Issues](#known-issues)
+- [Future Scope](#future-scope)
 - [Deployment](#Deployment)
 
 ## Project Overview
@@ -153,6 +154,11 @@ The program is designed as a single-page application (SPA) using React.js. It co
 I understand the importance of maintaining a clear separation of concerns in a well-structured application, where UI components are decoupled from data-fetching and processing. This separation ensures better maintainability, scalability, and reusability of code.
 
 - I could have used Proptypes in my components but I didn't use for the time constraint given.
+
+## Future Scope
+
+- We can add upload file options in the AI assistant. From which it will read detailed description and get steps.
+- We can also add images and videos for each step being displayed rather than only working with texts.
 
 ## Deployment
 
